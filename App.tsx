@@ -14,14 +14,6 @@ const GearIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
-const ResetIcon = ({ color }: { color: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke={color} strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h5M20 20v-5h-5" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4 9a9 9 0 0114.13-5.22m2.09 3.99a9 9 0 01-5.22 14.13" />
-  </svg>
-);
-
-
 function App() {
   const [settings, setSettings] = useState<Settings>(() => {
     try {
@@ -162,7 +154,7 @@ function App() {
             onClick={handleStartPause}
             ariaLabel={isActive ? 'Pause timer' : 'Start timer'}
             color={settings.colors.primary}
-            isTextButton
+            variant="primary"
           >
             {isActive ? 'PAUSE' : 'START'}
           </ControlButton>
@@ -170,13 +162,15 @@ function App() {
             onClick={handleReset}
             ariaLabel="Reset timer"
             color={settings.colors.primary}
+            variant="secondary-text"
           >
-            <ResetIcon color={settings.colors.primary} />
+            RESET
           </ControlButton>
           <ControlButton
             onClick={() => setIsSettingsModalOpen(true)}
             ariaLabel="Open settings"
             color={settings.colors.primary}
+            variant="secondary-icon"
           >
             <GearIcon color={settings.colors.primary} />
           </ControlButton>
