@@ -1,0 +1,5 @@
+{
+  "name": "Pomodoro Timer",
+  "description": "A customizable Pomodoro timer to help you focus. Change colors, set durations, and track your daily progress. Designed to be embeddable in Notion.",
+  "requestFramePermissions": []
+}
